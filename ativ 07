@@ -1,0 +1,9 @@
+programa {
+  funcao inicio() {
+    real a, b
+    a=32
+  escreva("hoje está fazendo ", a, " graus celsius \n")
+  b=a*9/5+32
+  escreva("Em fahrenheit está fazendo ", b ," graus \n")
+  }
+}
