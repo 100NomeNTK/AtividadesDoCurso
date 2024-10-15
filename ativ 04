@@ -1,0 +1,12 @@
+programa {
+  funcao inicio() {
+   inteiro a, b
+   escreva("Digite um  número \n")
+   leia(a)
+   escreva("Digite um  número \n")
+   leia(b)
+   se(a>b)
+   escreva(a)
+   senao escreva(b) 
+  }
+}
