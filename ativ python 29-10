@@ -1,0 +1,7 @@
+dolar= float(input('digite um valor em dolar '))
+num01=dolar*5.7
+print('O valor de em dolar: ', dolar, "\nValor em reais: ",num01 )
+print()
+num02= float(input('Digite um valor em Real'))
+tailan=num02*5.84
+print('O valor em Real: ',num02, '\nValor em Tailandês:',tailan)
