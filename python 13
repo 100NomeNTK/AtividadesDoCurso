@@ -1,0 +1,6 @@
+valor_inicial=float(input('Digite o valor do investimento: '))
+periodo=float(input('Informe a quantidade de período do investimento: '))
+taxa=0.02
+valor_final=valor_inicial*(1+taxa)**periodo
+print()
+print('Valor incial: ',valor_inicial,'\nPeríodo: ',periodo,'\nTaxa: ',taxa,'\nValor final: ',valor_final)
