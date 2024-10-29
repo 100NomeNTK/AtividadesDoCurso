@@ -1,0 +1,7 @@
+nome=input('Nome do produto: ')
+produto=float(input('Preço do produto'))
+porcentagem=float(input("Digite o valor  do desconto: "))
+desconto=(produto*porcentagem)/100
+print()
+print()
+print("Nome do produto: ",nome,'\nProduto: ',produto,'\nDesconto: ',desconto)
