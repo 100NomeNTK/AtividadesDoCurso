@@ -1,0 +1,6 @@
+num01= int(input("digite o 1º número: \n"))
+num02= int(input("digite o 2º número: \n"))
+num03= int(input("digite o 3º número: \n"))
+soma = num01 + num02 + num03
+
+print("A soma dos número inseridos é: ",soma)
