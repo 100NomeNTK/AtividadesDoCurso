@@ -1,0 +1,7 @@
+produto=input('Digite o nome do produto')
+preco_Unit=float(input('Digite p preço da unidade: '))
+Qte=float(input('Digite a quantidade vedida: '))
+total=preco_Unit*Qte
+print()
+print()
+print('Produto: ',produto, '\nPreço Unit: ',preco_Unit,'\nQte: ',Qte, '\nValor total: ',total)
