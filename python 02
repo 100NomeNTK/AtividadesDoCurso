@@ -1,0 +1,5 @@
+num = int(input ('Digite o 1º número'))
+ante= num-1
+suce=num+1
+
+print(ante,',', num,',', suce)
