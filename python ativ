@@ -34,7 +34,7 @@ elif salario_bruto>=2826.66 and salario_bruto<=3751.05:
 elif salario_bruto>=3751.06 and salario_bruto<=4664.68:
     ir=salario_bruto*0.225-651.73
 else:
-    ir=salario_bruto*0.225-884.96
+    ir=salario_bruto*0.275-884.96
     
 salario_li=salario_bruto-INSS-ir-VT
 print()
