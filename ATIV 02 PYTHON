@@ -1,0 +1,10 @@
+nome=input('Digite o seu nome: ')
+salario=float(input('Digite o seu salário: '))
+if salario<2000:
+    print('Nome: ',nome)
+    print('Salário: ',salario)
+    print('Mensagem: Desconto não dispónivel')
+else:
+    print('Nome: ',nome)
+    print('Salário: ',salario)
+    print('Mensagem: Desconto dispónivel')
