@@ -1,0 +1,47 @@
+nome=input('Digite o seu nome: ')
+salario_bruto=float(input('Digite o seu salário bruto: '))
+if salario_bruto <=1412.00:
+    INSS=(salario_bruto*7.5)/100
+    VT=salario_bruto*0.06
+elif salario_bruto>=1412.01 and salario_bruto<=2666.68:
+    INSS= salario_bruto*0.09-21.18
+    VT=salario_bruto*0.06
+elif salario_bruto>=2666.69 and salario_bruto<=4000.03:
+    INSS= salario_bruto*0.12-101.18
+    VT=salario_bruto*0.06
+elif salario_bruto>=4000.03 and salario_bruto<=7.786.02:
+    INSS= salario_bruto*0.14-181.18
+    VT=salario_bruto*0.06
+elif salario_bruto>=7.786.03 and salario_bruto<=13333.48:
+    INSS= salario_bruto*0.145-261.18
+    VT=salario_bruto*0.06
+elif salario_bruto>=13333.49 and salario_bruto<=26666.94:
+    INSS= salario_bruto*0.165-341.18
+    VT=salario_bruto*0.06
+elif salario_bruto>=26666.95 and salario_bruto<=52000.54:
+    INSS= salario_bruto*0.19-421.18
+    VT=salario_bruto*0.06
+else:
+    INSS= salario_bruto*0.22-501.18
+    VT=salario_bruto*0.06
+
+if salario_bruto<=2112.00:
+    ir=salario_bruto
+elif salario_bruto>=2112.01 and salario_bruto<=2826.65:
+    ir=salario_bruto*0.75-158.40
+elif salario_bruto>=2826.66 and salario_bruto<=3751.05:
+    ir=salario_bruto*0.15-370.40
+elif salario_bruto>=3751.06 and salario_bruto<=4664.68:
+    ir=salario_bruto*0.225-651.73
+else:
+    ir=salario_bruto*0.225-884.96
+    
+salario_li=salario_bruto-NSS-IR-VT
+    print()
+    print()
+    print()
+print('Funcionario: ',nome)
+print('Salário bruto: ',salario_bruto)
+print('INSS: 'INSS)
+print('VT: ',VT)
+print('Salário Liquido: ',salario_li)
