@@ -1,0 +1,10 @@
+num01= float(input('digite um valor em real: '))
+resposta=input('Deseja converter para euro ou para dolar')
+dolar=num01/5.7
+euro=num01/6.26
+if resposta== "euro":
+    euro=num01/6.26
+    print('O valor de R$',num01,' em euro é: ',euro)
+if resposta=="dolar":
+    print('O valor de R$',num01, 'em dolar é U$',dolar,)
+    
