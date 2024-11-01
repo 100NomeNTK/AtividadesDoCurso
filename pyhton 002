@@ -1,0 +1,5 @@
+num1=float(input('digite um número'))
+num2=float(input('digite mais um número'))
+num3=float(input('digite outro número'))
+mult=num1*num2*num3
+print('A multiplicação dos números selecionados é: ',mult)
