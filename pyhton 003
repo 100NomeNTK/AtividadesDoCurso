@@ -1,0 +1,3 @@
+cel=float(input('Digite um número'))
+kel=cel+273
+print('A converção da temperatura ',cel,' graus Celsius para Kelvin é ',kel)
