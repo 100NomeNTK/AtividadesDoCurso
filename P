@@ -1,0 +1,11 @@
+num01= float(input('digite um valor em real: '))
+resposta=input('Deseja converter para euro, para dolar ou para tailandês')
+dolar=num01/5.8
+euro=num01/6.38
+tailan=num01*5.78
+if resposta== "euro":
+    print('O valor de R$',num01,' em euro é: ',euro)
+if resposta=="dolar":
+    print('O valor de R$',num01, 'em dolar é U$',dolar,)
+if resposta=='tailandês':
+    print('O valor de R$: ',num01, 'Em Tailandês:',tailan)
