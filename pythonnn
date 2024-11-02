@@ -1,0 +1,18 @@
+nome=input('Digite o nome do funcionário: ')
+salario=float(input('Digite o salário do funcionário: '))
+meta_atingida=float(input('Digite a meta que o funcionário alcançou'))
+
+if  meta_atingida>=50000.00 and salario<3000.00:
+    premi=salario+(salario*0.20)
+    print('Nome: ', nome,'\nSalário: ',salario,'\nMeta de Atingida: ',meta_atingida,'\nPremiação: ',premi)
+
+elif meta_atingida>=50000.00 and salario>5000.00:
+    premi=salario+(salario*0.05)
+    print('Nome: ', nome,'\nSalário: ',salario,'\nMeta de Atingida: ',meta_atingida,'\nPremiação: ',premi)
+
+elif meta_atingida>=50000.00 and salario>=3000.00 and salario<=5000.00:
+    premi=salario+(salario*0.10)
+    print('Nome: ', nome,'\nSalário: ',salario,'\nMeta de Atingida: ',meta_atingida,'\nPremiação: ',premi)
+
+else:
+    print("VOCÊ PRECISAA TRABALHAR MAIS SE NÃO RUAAA!!!!")
