@@ -1,0 +1,22 @@
+Login=input('Login: ')
+Senha=input('Senha: ')
+
+
+if Login=="Admin" or Senha==123:
+    nome=input('Digite o nome do produto: ')
+    preco_unit=float(input('Digite o preço da unidade: '))
+    Quantidade=float(input('Digite a quantidade: '))
+    Form_pagamento=input('A forma de pagamento será em no pix, no cartão(1x), ou no cartão(2x) ')
+
+    
+    if Form_pagamento=='pix':
+        total=(preco_unit*Quantidade) - (preco_unit*Quantidade*0.10)
+        print('Nome do produto: ',nome,'\nPreço: ',preco_unit,'\nQuantidade: ',Quantidade,'\nVr Total: ',total)
+    elif Form_pagamento=='cartão(1x)':
+        total=preco_unit*Quantidade
+        print('Nome do produto: ',nome,'\nPreço: ',preco_unit,'\nQuantidade: ',Quantidade,'\nVr Total: ',total)
+    elif Form_pagamento=='cartão(2x)':
+        total=(preco_unit*Quantidade) +(preco_unit*0.05*Quantidade)
+        print('Nome do produto: ',nome,'\nPreço: ',preco_unit,'\nQuantidade: ',Quantidade,'\nVr Total: ',total)
+    else:
+        print("Usuario Incorreto")
