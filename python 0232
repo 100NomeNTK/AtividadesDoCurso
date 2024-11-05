@@ -1,0 +1,17 @@
+login01=input('Login: ')
+senha01=input('Senha: ')
+print()
+print('Insira seu login: ')
+login02=input()
+print('Insira sua senha: ')
+senha02=input()
+print()
+print()
+
+if login01==login02 and senha01==senha02:
+    base=float(input('Informe a base do triângulo: '))
+    altura=float(input('Informe a altura do triângulo: '))
+    area=(base*altura)/2
+    print('Área do triângulo informado é: ',area)
+else:
+    print("Usuario incorreto!!")
