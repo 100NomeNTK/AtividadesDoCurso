@@ -1,0 +1,25 @@
+nome=input('Digite o nome do hóspede: ')
+tip_quarto=input('Qual o tipo de quarto?: ')
+dias=int(input('Quantos dias você vai ficar hospedado?: '))
+pagamento=input('Qual a forma de pagamento?: ')
+
+if tip_quarto=='solteiro' and pagamento=='pix':
+    desconto=100*dias*0.10
+    vr_total=100*dias
+    valor_pagar=100*dias-desconto
+    print('Nome do hóspede: ',nome, '\nTipo de Quarto:',tip_quarto,'\nNº de dias:',dias,'\nVr Total:',vr_total,'\nDesconto:',desconto,'\nValor a pagar:',valor_pagar)
+elif tip_quarto=='solteiro' and pagamento=='cartão':
+    desconto='Não ha desconto'
+    vr_total=100*dias
+    valor_pagar=100*dias
+    print('Nome do hóspede: ',nome, '\nTipo de Quarto:',tip_quarto,'\nNº de dias:',dias,'\nVr Total:',vr_total,'\nDesconto:',desconto,'\nValor a pagar:',valor_pagar)
+elif tip_quarto=='casal' and pagamento=='pix':
+    desconto=170*dias*0.10
+    vr_total=170*dias
+    valor_pagar=170*dias-desconto
+    print('Nome do hóspede: ',nome, '\nTipo de Quarto:',tip_quarto,'\nNº de dias:',dias,'\nVr Total:',vr_total,'\nDesconto:',desconto,'\nValor a pagar:',valor_pagar)
+elif tip_quarto=='casal' and pagamento=='cartão':
+    desconto='Não ha desconto'
+    vr_total=170*dias
+    valor_pagar=170*dias
+    print('Nome do hóspede: ',nome, '\nTipo de Quarto:',tip_quarto,'\nNº de dias:',dias,'\nVr Total:',vr_total,'\nDesconto:',desconto,'\nValor a pagar:',valor_pagar)
