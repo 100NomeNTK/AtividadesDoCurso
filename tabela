@@ -1,0 +1,13 @@
+num01=float(input('Digite um número: '))
+num02=float(input('Digite um número: '))
+num03=float(input('Digite um número: '))
+num04=float(input('Digite um número: '))
+
+if num01>num02 and num01>num03 and num01>num04:
+    print('O maior número inserido  é ',num01)
+if num02>num01 and num02>num03 and num02>num04:
+    print('O maior número inserido  é ',num02)
+if num03>num02 and num03>num01 and num03>num04:
+    print('O maior número inserido  é ',num03)
+if num04>num01 and num04>num03 and num04>num01:
+    print('O maior número inserido  é ',num04)
