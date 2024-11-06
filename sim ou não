@@ -1,0 +1,9 @@
+nome=input("Digite um nome: ")
+print('Nome: ',nome,)
+resposta=input('Deseja colocar um novo nome? ')
+while resposta=='sim':
+        nome=input("Digite um nome: ")
+        print('Nome: ',nome,)
+        resposta=input('Deseja colocar um novo nome? ')
+else:
+        print('Programa encerrado!!')
