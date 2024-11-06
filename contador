@@ -1,0 +1,7 @@
+num01=int(input('Digite um número: '))
+contador=0
+
+while (contador < 11):
+        resultado=num01*contador
+        print(f'{num01} x {contador} = {resultado}')
+        contador = contador + 1
