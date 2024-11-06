@@ -1,0 +1,12 @@
+nome=input('Digite o seu nome: ')
+idade=int(input('Digite a sua idade: '))
+sexo=input('Digite o seu sexo: ')
+
+if idade>=18 and sexo=="masculino":
+        print('Você é maior de idade ','\nVocê é do sexo masculino.')
+elif idade<18 and sexo=='masculino':
+        print('Você é menor de idade ','\nVocê é do sexo masculino.')
+if idade>=18 and sexo=='feminino':
+        print('Você é maior de idade','\nVocê é do sexo feminino.')
+elif idade<18 and sexo=='feminino':
+        print('Você é menor de idade','\nVocê é do sexo feminino.')
