@@ -1,0 +1,32 @@
+print('Bem Vindo ao Teste de Ansiedade')
+print()
+print('O resultado da avaliação não indica um diagnóstico conclusivo. Para determinar qualquer diagnóstico potencial por favor discuta seu resultado com um psicólogo ou um médico psiquiatra.')
+print()
+print('Serão feito apenas 12 perguntas e deverão ser respondidas com sinceridade e novamente isso NÃO É UM DIAGNÓSTICO CONCLUSIVO.')
+print()
+print()
+nome=input('Digite o seu nome')
+idade=int(input('digite a sua idade'))
+
+
+
+r1=int(input('Tive dificuldade em respirar em alguns momentos (ex. respiração ofegante, falta de ar, sem ter feito nenhum esforço físico). 0/absolutamente não 1/levemente 2/moderadamente 3/gravimente'))
+r2=int(input('Não ser capaz de impedir ou de controlar as preocupações.  0/nehuma vez 1/alguns dias  2/mais da metade dos dias 3/quase todos os dias'))
+r3=int(input('Preocupar-se muito com diversas coisas. 0/nenhuma vez 1/levemente 2/moderadamente 3/gravemente'))
+r4=int(input('Senti tremores (ex. nas mãos). 0/não 1/pouco 2/de vez em quando 3/frenquentemente'))
+r6=int(input('Ficar tão agitado/a que se torna difícil permanecer sentado/a.  0/dificilmente 1/levemente 2/quase sempre 3/todos os dias'))
+r7=int(input('Senti que estava sempre nervoso. 0/não 1/alguns dias 2/mais da metade dos dias 3/todos os dias da semana'))
+r8=int(input('Sabia que meu coração estava alterado mesmo não tendo feito nenhum esforço físico. 0/nunca 1/dificilmente 2/moderadamente 3/sempre'))
+r9=int(input('Sentir medo como se algo horrível fosse acontecer. 0/nenhuma vez 1/alqumas vez 2/metade dos dias 3/todos dias'))
+r10=int(input('Preocupei-me com situações em que eu pudesse entrar em pânico e parecesse ridículo. 0/nunca me ocorreu 1/apenas algumas vez 2/frequentemente 3/toda hora'))
+r11=int(input('Senti que ia entrar em pânico 0/nunca me ocorreu 1/tive apenas em situaçoes extremas 2/tive varias situaçoes 3/tive em qualquer tipo de situção'))
+r12=int(input('Ultilizo das redes socias como meio de escape e me sinto profundamente ligado a ela. 0/não 3/sim'))
+
+resu=r1+r2+r3+r4+r5+r6+r7+r8+r9+r10+r11+r12
+
+if resu<=8:
+    print('Seu nivel de ansiedade é normal.')
+elif resu>=9 and resu<=13:
+    print('Seu nivel de ansiedade é preocupante!!')
+elif resu>13:
+    print('SOOOOCCCOOOOORRRRROOOOOO!!!!!')
