@@ -1,0 +1,18 @@
+pessoas=[]
+
+while True:
+    print('insira o seu nome e senha para fazer um cadastrato')
+    nome=input('Digite um nome para ser feito o login: ')
+    print()
+    senha=input('Digite a senha de seu login: ')
+    pessoas.append((nome, senha))
+    print('Login: ',nome,'\nSenha: ',senha)
+    print()
+    continuar= input('Deseja inserir um novo cadastrato? (s/n): ')
+    
+    if continuar!='s' and continuar=='n':
+        break
+
+print('\nLogin e Senhas inseridos:')
+for pessoa  in pessoas:
+    print('Login: ', pessoa[0],'\nSenha: ', pessoa[1])
