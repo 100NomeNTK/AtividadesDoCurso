@@ -1,0 +1,20 @@
+login01=input('Login: ')
+senha01=input('Senha: ')
+print(login01, senha01)
+print('Insira seu login: ')
+login02=input()
+print('Insira sua senha: ')
+senha02=input()
+print()
+print()
+
+;
+while login01!=login02 or senha01!=senha02:
+    print('Digite o login e senha novamente')
+    print('Insira seu login: ')
+    login02=input()
+    print('Insira sua senha: ')
+    senha02=input()
+
+if login01==login02 and senha01==senha02:
+    print('cadastro bem sucedido.')
