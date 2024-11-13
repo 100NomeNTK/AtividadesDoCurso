@@ -1,0 +1,12 @@
+pessoas=[]
+contador=1
+
+while contador<=7:
+    nome=input('Digite o seu nome: ')
+    idade=int=(input('Digite a sua idade: '))
+    pessoas.append((nome, idade))
+    contador= contador + 1
+    
+print('Nomes Inseridos: ')
+for pessoa in pessoas:
+    print('Nomes: ',pessoa[0],'\nIdade: ', pessoa[1])
