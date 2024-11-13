@@ -1,0 +1,17 @@
+  login02=input()
+    print('Insira sua senha: ')
+    senha02=input()
+    
+    if login1==login2 and senha1==senha2:
+        print('cadastro bem sucedido. Bem vindo')
+        break
+
+rep1='s'
+while rep1=='s':
+        nome=input('Digite o nome do funcionario: ')
+        salario=float(input('Digite o salário do funcionario: '))
+        print('Haverá um reajuste de 10% no salario do funcionario cadastrado.')
+        reajuste=salario*0.10
+        sa_novo=salario+reajuste
+        print('Nome do funcionario: ',nome,'\nSalário: ',salario,'\nReajuste: ',reajuste,'\nSalário Novo: ',sa_novo)
+        rep1=input('Deseja fazer outro cadastrado? (s/n)')
