@@ -1,0 +1,16 @@
+while rep1=='s':
+    nome=input('Digite o seu nome: ')
+    idade=int(input('Digite a sua idade: '))
+    
+    if idade<16:
+        print('O seu voto não é obrigatóriao.')
+        
+    elif idade>=16 and idade<18:
+        print('O seu voto é facultaivo!!')
+    
+    elif idade>=18 and idade<=70:
+        print('O seu voto é obrigatório!!!JÁ VOTOU, ENTÃO VAI VOTAR CARNIÇA!!')
+    else:
+        print('O seu voto é facultativo.')
+        
+    rep1=input('Deseja inserir novos dados? (s/n)')
