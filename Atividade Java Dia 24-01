@@ -1,0 +1,100 @@
+import java.util.Scanner;
+public class Atividade02 {
+    public static void main(String[] args) {
+
+        //Atividade 01
+
+        Scanner sc = new Scanner(System.in);
+        double base = 10.5;
+        double altura = 5.2;
+        double area;
+        System.out.println("Digite o base do triangulo: ");
+        base = sc.nextDouble();
+        System.out.println("Digite a altura do triangulo: ");
+        altura = sc.nextDouble();
+        area = Math.round((base * altura) / 2);
+        System.out.println("A área do tringulo é: " + area);
+
+        //Atividade 02
+
+        double hipotenusa;
+        System.out.println("Digite o primeiro cateto: ");
+        double cateto01 = sc.nextDouble();
+        System.out.println("Digite o segundo cateto: ");
+        double cateto02 = sc.nextDouble();
+        hipotenusa = Math.sqrt(Math.pow(cateto01,2)+Math.pow(cateto02,2));
+        System.out.println("A hipotenusa é " + hipotenusa);
+
+        //Atividade 03
+
+        double volume;
+        System.out.println("Digite o raio da esfera: ");
+        double raio = sc.nextDouble();
+        volume = Math.sqrt(4*Math.PI*Math.pow(raio,3))/3;
+        System.out.println("O volume é " + volume);
+
+        //Atividade 04
+
+        System.out.println("Digite o valor do x1: ");
+        double x1 = sc.nextDouble();
+        System.out.println("Digite o valor do y1: ");
+        double y1 = sc.nextDouble();
+        System.out.println("Digite o valor do x2: ");
+        double x2 = sc.nextDouble();
+        System.out.println("Digite o valor do y2: ");
+        double y2 = sc.nextDouble();
+        double distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        System.out.println("A distância entre os dois pontos do plano cartesiano  é: "+ distancia);
+
+        //Atividade 05
+        int min = 1;
+        int max = 100;
+        int randomNum = (int)(Math.random() * (max - min + 1)) + min;
+        System.out.println("O número sorteado foi "+randomNum);
+
+        //Atividade 06
+
+        System.out.println("Digite um número: ");
+        int numero01 = sc.nextInt();
+        System.out.println("Digite outro número: ");
+        int numero02 = sc.nextInt();
+        int diferenca = numero01 - numero02;
+        int valorAbsoluto= Math.abs(diferenca);
+        System.out.println("O Valor absoluto de"+numero01+ "e "+numero02+" é "+valorAbsoluto);
+
+        //Atividade 07
+        System.out.println("Digite um valor da baseMaior: ");
+        double baseMaior = sc.nextDouble();
+        System.out.println("Digite o valor do baseMenor: ");
+        double baseMenor = sc.nextDouble();
+        System.out.println("Digite o valor do altura: ");
+        double alturaTrapezio= sc.nextDouble();
+        double areaTrapezio = ((baseMaior+baseMenor)*alturaTrapezio)/2;
+        System.out.println("A área é: " + area);
+
+        //Atividade 08
+
+        System.out.println("Digite o raio do cilindro: ");
+        double raioCilindro = sc.nextDouble();
+        System.out.println("Digite o altura do cilindro: ");
+        double alturaCilindro = sc.nextDouble();
+        double areaCilindro = 2*(Math.PI *raioCilindro*(raioCilindro+alturaCilindro));
+        System.out.println("A área do cilindro é " + areaCilindro);
+
+        //Atividade 09
+
+        System.out.println("Digite o valor de x: ");
+        double x = sc.nextDouble();
+        System.out.println("Digite o valor de y: ");
+        double y = sc.nextDouble();
+        double expressao = (Math.pow(x,2)+(3*y))/2;
+        System.out.println("O resultado da expressão é: "+expressao);
+
+        //Atividede 10
+
+        System.out.println("Digite o valor do angulo em graus: ");
+        double anguloGraus = sc.nextDouble();
+        double anguloRadianos = anguloGraus * Math.PI / 180;
+        System.out.println("O valor do angulo de graus para radiano é:"+anguloRadianos);
+    }
+}
