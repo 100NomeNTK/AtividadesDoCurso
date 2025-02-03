@@ -1,0 +1,18 @@
+public class AtividadeErros {
+
+    public static void main(String[] args) {
+        System.out.println("Encontre os erros neste código!"); // Faltou o acrescimo do ponto e vírula depois do parêntese.
+
+        int numero1 = 10; // Faltou colocar ponto e vírgula depois do 10.
+        int numero2 = 5; // Quando o tipo variável é "int" devesse colocar o número em forma de inteiro.
+
+        int soma = numero1 + numero2; // Faltou colocar o ponto e vírgula depois da variavel numero2.
+        System.out.println("A soma de " + numero1 +" e " + numero2 + " é: " + soma); // Faltou acrescentar o sinal de mais "+" junto com o ponto e vírgula depois do parênteses.
+
+        double raizQuadrada = Math.sqrt(numero1);
+        System.out.println("A raiz quadrada de" + numero1 +" é:" + raizQuadrada); // Faltou acrescentar aspas antes de "de" e depois de "+ numero +" na     frase.
+
+        double resultado =  numero1 / 2; // Não se pode dividir um número com  zero é recomenado que altere o valor de zero para um valor superior a ele, e, também devesse alterar o tipo de variavel "int" para "double" para que não aja conflitos de interpretação.
+        System.out.println("O resultado da divisão é: " + resultado); // Faltou o acrescimo do ponto e vírula depois do parêntese.
+    }
+}
