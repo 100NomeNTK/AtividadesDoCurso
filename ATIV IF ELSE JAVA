@@ -1,0 +1,217 @@
+import java.util.Scanner;
+public class IF_ELSE {
+    public static void main(String[] args) {
+        //Atividade 01
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite um número: ");
+        int num = sc.nextInt();
+        if (num % 2 == 0) {
+        System.out.println("O numero digitado é par.");
+        }
+        else {
+            System.out.println("O número Digite é impar.");
+        }
+
+        //Atividade 02
+
+        System.out.println("Digite outro  número para que seja identificado como positivo, negativo ou zero: ");
+        int num1 = sc.nextInt();
+        if ( num1 > 0){
+            System.out.println("O número digitado é positivo. ");
+        }
+        else if (num1 == 0){
+            System.out.println("O número digitado é zero. ");
+        }
+        else {
+            System.out.println("O número digitado é negativo. ");
+        }
+
+        //Atividade 03
+
+        System.out.println("Digite o primeiro numero: ");
+        int Num1 = sc.nextInt();
+        System.out.println("Digite o segundo numero: ");
+        int Num2 = sc.nextInt();
+        if (Num1 > Num2) {
+            System.out.println("O maior número digitado entre os dois é "+Num1);
+        }
+        else{
+            System.out.println("O maior número digitado entre os dois é "+Num2);
+        }
+
+        //Atividade 04
+
+        System.out.println("Digite a nota do aluno na prova: ");
+        float nota = sc.nextFloat();
+        if (nota >=7){
+            System.out.println("Aprovado");
+        }
+        else{
+            System.out.println("Reprovado");
+        }
+
+        //Atividade 05
+
+        System.out.println("Digite o comprimento do primeiro lado da figura geometrica: ");
+        float lado1 = sc.nextFloat();
+        System.out.println("Digite o comprimento do segundo lado da figura geometrica: ");
+        float lado2 = sc.nextFloat();
+        System.out.println("Digite o comprimento do terceiro lado da figura geometrica: ");
+        float lado3 = sc.nextFloat();
+        if (lado1 + lado2 > lado3 || lado2 + lado3 > lado1 || lado3 + lado1 > lado2){
+            System.out.println("É um triângulo");
+        }
+        else{
+            System.out.println("Não é um triângulo");
+        }
+
+        //Atividade 06
+
+        System.out.println("Digite um número: ");
+        double n1 = sc.nextDouble();
+        System.out.println("Digite outro numero: ");
+        double n2 = sc.nextDouble();
+        System.out.println("Digite um operador: Ex( +,-,*,/) ");
+        char operador = sc.next().charAt(0);
+        if (operador == '+'){
+            double resultado = n1 + n2;
+            System.out.println("A operação escolhida foi soma. O resultado da operação é: "+ resultado);
+        }
+        else if (operador == '-'){
+            double resultado = n1 - n2;
+            System.out.println("A operação escolhida foi subtração. O resultado da operação é: "+ resultado);
+        }
+        else if (operador == '*'){
+            double resultado = n1 * n2;
+            System.out.println("A operação escolhida foi multiplicação. O resultado da operação é: "+ resultado);
+        }
+        else if (operador == '/') {
+            if (n2 == 0 || n1 == 0) {
+                System.out.println("Não é possível a divisão.");
+            } else {
+                double resultado = n1 / n2;
+                System.out.println("A operação escolhida foii divisão. O resultado da operação é: " + resultado);
+            }
+        }
+
+        //Atividade 07
+
+        System.out.println("Escolha um numero de 1 a 7: ");
+        double dia = sc.nextDouble();
+        if (dia == 1){
+            System.out.println("Hoje é segunda-feira");
+        }
+        else if (dia == 2){
+            System.out.println("hoje é terça-feira");
+        }
+        else if (dia == 3){
+            System.out.println("Hoje é quarta-feira");
+        }
+        else if (dia == 4){
+            System.out.println("Hoje é quinta-feira");
+        }
+        else if (dia == 5){
+            System.out.println("Hoje é sexta-feira");
+        }
+        else if (dia == 6){
+            System.out.println("Hoje é sabado");
+        }
+        else if (dia == 7){
+            System.out.println("Hoje é domingo");
+        }
+        else {
+            System.out.println("O ANIMAL DE TETA QUADRADA EU NÃO MANDEI VOCÊ ESCOLHER UM MAIOR QUE 7 SEU IDIOTA");
+        }
+
+        //Atividade 08
+
+        System.out.println("Escolha um numero de 1 a 12: ");
+        double mes = sc.nextDouble();
+        if (mes == 1){
+            System.out.println("O mês é Janeiro");
+        }
+        else if (mes == 2){
+            System.out.println("O mês é Fevereiro");
+        }
+        else if (mes == 3){
+            System.out.println("O mês é Março");
+        }
+        else if (mes == 4){
+            System.out.println("O mês é Abril");
+        }
+        else if (mes == 5){
+            System.out.println("O mês é Maio");
+        }
+        else if (mes == 6){
+            System.out.println("O mês é Junho");
+        }
+        else if (mes == 7){
+            System.out.println("O mês é Julho");
+        }
+        else if (mes == 8){
+            System.out.println("O mês é Agosto");
+        }
+        else if (mes == 9){
+            System.out.println("O mês é Setembro");
+        }
+        else if (mes == 10){
+            System.out.println("O mês é Outubro");
+        }
+        else if (mes == 11){
+            System.out.println("O mês é Novembro");
+        }
+        else if (mes == 12){
+            System.out.println("O mês é Dezembro");
+        }
+        else {
+            System.out.println("O mês é NAÕ EXISTE MAIS DE 12 MESES SEU BURRO, LARGA ESSE CELULAR QUE JÁ ESTA DANDO EFEITO");
+        }
+
+        //Atividade 09
+
+        System.out.println("Digite o numero o primeiro lado do triÂngulo: ");
+        double LADO1 = sc.nextDouble();
+        System.out.println("Digite o numero o segundo lado do triÂngulo: ");
+        double LADO2 = sc.nextDouble();
+        System.out.println("Digite o numero o terceiro lado do triÂngulo: ");
+        double LADO3 = sc.nextDouble();
+        if (LADO1 == LADO2 && LADO3 == LADO1 && LADO2 == LADO3){
+            System.out.println("O triângulo é Triângulo Equilátero");
+        }
+        else if (LADO1 == LADO2 && LADO2 != LADO3 && LADO1 != LADO3 || LADO2 == LADO3 && LADO3 != LADO1 && LADO2 != LADO1 || LADO1 == LADO2 && LADO1 != LADO3 && LADO2 != LADO3 ){
+            System.out.println("O triângulo é Triângulo Issósceles");
+        }
+        else if (LADO1 != LADO2 && LADO2 != LADO3 && LADO3 != LADO1){
+            System.out.println("O triângulo é Triângulo Escaleno");
+        }
+
+        //Atividade 10
+
+        System.out.println("Digite o seu peso em Kg:");
+        double PESO1 = sc.nextDouble();
+        System.out.println("Digite o sua altura em Metros:");
+        double METROS = sc.nextDouble();
+        double imc = PESO1 /(METROS * METROS);
+        if (imc < 18.5){
+            System.out.println("VocÊ está abaixo do peso");
+        }
+        else if (imc >18.6 &&  imc < 24.9){
+            System.out.println("Você está com o peso ideal (parabéns)");
+        }
+        else if (imc >25.0 &&  imc < 29.9){
+            System.out.println("Você está levemente acima do peso");
+        }
+        else if (imc >30.0 &&  imc < 34.9) {
+            System.out.println("Você está com obesidade grau 1");
+        }
+        else if (imc >35.0 &&  imc < 39.9) {
+            System.out.println("Você está com obesidade grau 2");
+        }
+        else if (imc >40.0 && imc <79.9) {
+            System.out.println("Você está com obesidade grau 3 (DAQUI A POUCO VC VAI ESTÁ NO GRAU ESPECIAL, VC VAI LUTAR COM O SUKUNA??) ");
+        } else if (imc > 80.0) {
+            System.out.println("VOCÊ ESTÁ PRONTO PARA LUTAR CONTRA O SUKUNA VAI PARA SHINJUKU!!");
+        }
+    }
+}
