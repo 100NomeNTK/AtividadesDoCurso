@@ -1,0 +1,92 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.event.*;
+
+public class ExemploJButtons {
+    public static class ExemploJButton extends JFrame {
+        public ExemploJButton() {
+            setTitle("Exemplo JButton");
+            setSize(400, 300);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            JPanel painel = new JPanel();
+
+            JButton botao = new JButton("Clique aqui");
+            botao.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    JOptionPane.showMessageDialog(null, "Clique aqui!");
+                }
+            });
+            painel.add(botao);
+
+            add(painel);
+            setVisible(true);
+        }
+        public static void main(String[] args) {
+            new ExemploJButton();
+        }
+    }
+}
+
+
+class AtivPratica extends JFrame {
+    public AtivPratica() {
+        setTitle("Ativa Pratica");
+        setSize(400, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel painel1 = new JPanel();
+        JButton botao1 = new JButton("Clique aqui");
+
+        JPanel painel = new JPanel();
+
+        JTextField campoTexto = new JTextField(30);
+        painel.add(new JLabel("Digite seu nome"));
+        painel.add(campoTexto);
+        campoTexto.setEditable(true);
+
+        botao1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, campoTexto.getText());
+
+            }
+        });
+
+
+
+        painel.add(campoTexto);
+        add(painel);
+        setVisible(true);
+
+        painel1.add(botao1);
+        add(painel1);
+        setVisible(true);
+
+
+    }
+    public static void main(String[] args) {
+        new AtivPratica();
+    }
+  }
+
+class ExemploJComboBox extends JFrame {
+    public ExemploJComboBox() {
+        setTitle("Exemplo JComboBox");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel painel = new JPanel();
+        JComboBox<String> comboBox = new JComboBox<>();
+        comboBox.addItem("Item 1");
+        comboBox.addItem("Item 2");
+        comboBox.addItem("Item 3");
+
+        painel.add(new JLabel("Selecione uma opção:"));
+        painel.add(comboBox);
+
+        add(painel);
+        setVisible(true);
+    }
+    public static void main(String[] args) {
+        new ExemploJComboBox();
+    }
+}
