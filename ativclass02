@@ -1,0 +1,452 @@
+import java.util.Scanner;
+
+public class ativclass02 {
+}
+class Cachorros {
+    String nome;
+    int idade;
+    String raca;
+    public Cachorros(String nome, int idade, String raca) {
+        this.nome = nome;
+        this.idade = idade;
+        this.raca = raca;
+
+    }
+    public void laitr() {
+        System.out.println("Au Au");
+    }
+    public String  getNome() {
+        return nome;
+    }
+    public String getRaca() {
+        return raca;
+    }
+    public int getIdade() {
+        return idade;
+    }
+
+    public static void main(String[] args) {
+        Cachorros cachorros = new Cachorros("Felipe", 20, "Felipe");
+        cachorros.laitr();
+        System.out.println("Nome: "+ cachorros.getNome());
+        System.out.println("Raça: "+ cachorros.getRaca());
+        System.out.println("Idade: "+ cachorros.getIdade());
+    }
+}
+
+class Pessoas {
+
+    private String nome;
+    private int idade;
+    private String endereco;
+    public Pessoas(String nome, int idade, String endereco) {
+        this.nome = nome;
+        this.idade = idade;
+        this.endereco = endereco;
+    }
+    public void apresentar() {
+        System.out.println("Ola meu nome é "+ nome + " tenho "+ idade + " anos" + "     moro em " + endereco);
+    }
+    public String getNome() {
+        return nome;
+    }
+    public int getIdade() {
+        return idade;
+    }
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite seu nome: ");
+        String nome = sc.nextLine();
+        System.out.println("Digite sua idade: ");
+        int idade = sc.nextInt();
+        System.out.println("Digite seu endereço: ");
+        String endereco = sc.next();
+        Pessoas pessoas = new Pessoas(nome, idade, endereco);
+        pessoas.apresentar();
+    }
+}
+
+class conta {
+    int numero;
+    double saldo;
+    public conta(int numero, double saldo) {
+        this.numero = numero;
+        this.saldo = saldo;
+    }
+    public void deposito(double valor) {
+        this.saldo += valor;
+    }
+    public boolean sacar(double valor) {
+        if (this.saldo >= valor) {
+            this.saldo -= valor;
+            System.out.println(valor + " sacado com sucesso!");
+            return true;
+        }else {
+            System.out.println("Saldo insuficiente");
+            return false;
+        }
+   }
+   public double getNumero() {
+        return numero;
+   }
+   public double getSaldo() {
+        return saldo;
+   }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o número da sua conta: ");
+        int numero = sc.nextInt();
+        System.out.println("Digite o saldo da sua conta: ");
+        double saldo = sc.nextDouble();
+        conta conta = new conta(numero, saldo);
+        System.out.println("digite o quanto você deseja sacar: ");
+        double valor = sc.nextDouble();
+        conta.sacar(valor);
+        System.out.println("O seu saldo atual é de: " + conta.getSaldo());
+
+    }
+}
+
+class Livro {
+    private String titulo;
+    private String autor;
+    private int numeroPaginas;
+
+    public String getTitulo() {
+        return titulo;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public String getAutor() {
+        return autor;
+    }
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+    public int getNumeroPaginas() {
+        return numeroPaginas;
+    }
+    public void setNumeroPaginas(int numeroPaginas) {
+        this.numeroPaginas = numeroPaginas;
+    }
+    public Livro(String titulo, String autor, int numeroPaginas) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.numeroPaginas = numeroPaginas;
+    }
+    public void exibir() {
+        System.out.println("Titulo: " + titulo);
+        System.out.println("Autor: " + autor);
+        System.out.println("Numero de Paginas: " + numeroPaginas);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite seu titulo: ");
+        String titulo = sc.nextLine();
+        System.out.println("Digite seu autor: ");
+        String autor = sc.nextLine();
+        System.out.println("Digite seu numero de paginas: ");
+        Livro livro = new Livro(titulo, autor, Integer.parseInt(sc.nextLine()));
+        livro.exibir();
+    }
+}
+
+class Produto {
+    private String nome;
+    private double preco;
+    private double desconto;
+
+    public String getNome() {
+        return nome;
+    }
+    public double getPreco() {
+        return preco;
+    }
+
+    public double getDesconto() {
+        return desconto;
+    }
+    public void calcularPrecoComDesconto() {
+        double precodesconto = preco-(preco*(desconto/100));
+    }
+    public Produto(String nome, double preco, double desconto) {
+        this.nome = nome;
+        this.preco = preco;
+        this.desconto = desconto;
+    }
+    public void mostrar() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Preço: " + preco);
+        System.out.println("Desconto: " + desconto);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o nome do produto: ");
+        String nome = sc.nextLine();
+        System.out.println("Digite o preço do produto: ");
+        double preco = sc.nextDouble();
+        System.out.println("Digite o desconto do produto sem a porcentagem: ");
+        double desconto = sc.nextDouble();
+        Produto p = new Produto(nome, preco, desconto);
+        System.out.println("O produto "+ nome + "custa R$ " + preco + "e o desconto é de R$ " + desconto + ". O valor com o desconto é de R$ " );
+        p.calcularPrecoComDesconto();
+        p.mostrar();
+    }
+}
+
+class Funcionario {
+    private String nome;
+    private double salario;
+    private String cargo;
+    private double bonus;
+
+    public Funcionario(String nome, double salario, String cargo, double bonus) {
+        this.nome = nome;
+        this.salario = salario;
+        this.cargo = cargo;
+        this.bonus = bonus;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+    public double getSalario() {
+        return salario;
+    }
+    public String getCargo() {
+        return cargo;
+    }
+    public double calcularBobus() {
+        double bonus1 = salario*(bonus/100);
+        return bonus1 + salario;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite seu nome: ");
+        String nome = sc.nextLine();
+        System.out.println("Digite o seu cargo: ");
+        String cargo = sc.nextLine();
+        System.out.println("Digite o seu salario: ");
+        double salario = sc.nextDouble();
+        System.out.println("Digite o seu bônus sem a porcentagem: ");
+        double bonus = sc.nextDouble();
+        Funcionario f = new Funcionario(nome, salario, cargo, bonus);
+        f.calcularBobus();
+        System.out.println("O seu salário com o bônus fica em: " + f.calcularBobus());
+        System.out.println("Nome: " + nome);
+        System.out.println("Cargo: " + cargo);
+        System.out.println("Salario: " + salario);
+        System.out.println("Bonus: " + f.calcularBobus());
+    }
+}
+
+class Carro1 {
+    private String marca;
+    private String modelo;
+    private String cor;
+    int velocidadeAtual;
+
+    public Carro1(String marca, String modelo, String cor, int velocidadeAtual) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.velocidadeAtual = 0;
+    }
+    public String getMarca() {
+        return marca;
+    }
+    public String getModelo() {
+        return modelo;
+    }
+    public String getCor() {
+        return cor;
+    }
+    public int getvelocidadeAtual() {
+        return velocidadeAtual;
+    }
+    public void Acelerar(int incrementar) {
+        if (incrementar > 0) {
+            velocidadeAtual += incrementar;
+        } else {
+            System.out.println("O valor aceleração deve ser positivo");
+        }
+    }
+    public void exibirIformaiton() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Cor: " + cor);
+        System.out.println("Velocidade: " + velocidadeAtual +"Km/h");
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o modelo de seu carro: ");
+        String modelo = sc.nextLine();
+        System.out.println("Digite o cor de seu carro: ");
+        String cor = sc.nextLine();
+        System.out.println("Digite a marca do carro: ");
+        String marca = sc.nextLine();
+        Carro1 carro1 = new Carro1(marca, modelo, cor, 0);
+        carro1.exibirIformaiton();
+        System.out.println("Acelerando o carroo...");
+        carro1.Acelerar(30);
+        carro1.exibirIformaiton();
+    }
+}
+
+class Televisor {
+    int canal;
+    int volume;
+
+    public Televisor(int canal, int volume) {
+        this.canal = 1;
+        this.volume = 10;
+    }
+    public int getCanal() {
+        return canal;
+    }
+    public int getVolume() {
+        return volume;
+    }
+    public void aumentarVolume(int incremento) {
+        if(incremento >=0 && volume <=10) {
+            volume += incremento;
+        } else {
+            System.out.println("O volume já está no máximo");
+        }
+    }
+    public void diminuirVolume(int incremento2) {
+        if(incremento2 >= 0 && volume >=10) {
+            volume -= incremento2;
+        } else {
+            System.out.println("O volume já está no minimo");
+        }
+    }
+    public void trocarCanal(int novocanal) {
+        if (novocanal > 0) {
+            canal = novocanal;
+            System.out.println("Canal alterado para o canal " + canal);
+        } else {
+            System.out.println("Canal invalido. Tente novamente");
+        }
+    }
+    public void aumentarCanal() {
+        canal++;
+        System.out.println("Canal alterado para o canal " + canal);
+    }
+    public void diminuirCanal() {
+        if (canal > 1) {
+            canal--;
+            System.out.println("Canal alterado para o canal " + canal);
+
+        }else {
+            System.out.println("Não é possível diminuir mais o canal");
+        }
+    }
+
+    public void exibirCanalAtual() {
+        System.out.println("Canal atual: " + canal);
+    }
+
+    public static void main(String[] args) {
+        Televisor televisor = new Televisor(5,10);
+        televisor.aumentarVolume(5);
+        televisor.diminuirVolume(5);
+        televisor.trocarCanal(5);
+        televisor.aumentarVolume(10);
+        televisor.diminuirVolume(1);
+
+    }
+}
+
+class Calculadora {
+    private double a;
+    private double b;
+
+    public Calculadora(double a, double b) {
+        this.a = a;
+        this.b = b;
+    }
+    public double getA() {
+        return a;
+    }
+    public double getB() {
+        return b;
+    }
+    public double soma(double a, double b) {
+        return a + b;
+    }
+    public double subtracao(double a, double b) {
+        return a - b;
+    }
+    public double multiplicacao(double a, double b) {
+        return a * b;
+    }
+    public double divisao(double a, double b) {
+        if (a == 0 || b == 0) {
+            System.out.println("Não é possivel dividir do zero");
+            return 0;
+        } else {
+            return a / b;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o primeiro valor: ");
+        double a = sc.nextDouble();
+        System.out.println("Digite o segundo valor: ");
+        double b = sc.nextDouble();
+        Calculadora calculadora = new Calculadora(a, b);
+        System.out.println("SOMA: "+ calculadora.soma(a, b));
+        System.out.println("SUBTRAÇÃO: "+ calculadora.subtracao(a, b));
+        System.out.println("MULTIPLICAÇÃO: "+ calculadora.multiplicacao(a, b));
+        System.out.println("DIVISÃO: "+ calculadora.divisao(a, b));
+    }
+}
+
+class Retangulo {
+    private double lado1;
+    private double lado2;
+
+    public Retangulo(double lado1, double lado2) {
+        this.lado1 = lado1;
+        this.lado2 = lado2;
+    }
+    public double getLado1() {
+        return lado1;
+    }
+    public double getLado2() {
+        return lado2;
+    }
+    public boolean ehQuadrado() {
+        if (lado1 == lado2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o primeiro lado: ");
+        double lado1 = sc.nextDouble();
+        System.out.println("Digite o segundo lado: ");
+        double lado2 = sc.nextDouble();
+        Retangulo retangulo = new Retangulo(lado1, lado2);
+        if (retangulo.ehQuadrado()) {
+            System.out.println("É um retangulo quadrado");
+        } else {
+            System.out.println("Não é um retangulo quadrado");
+        }
+    }
+}
