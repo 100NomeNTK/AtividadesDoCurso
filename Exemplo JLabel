@@ -1,0 +1,30 @@
+import javax.swing.*;
+import java.awt.*;
+class Exemplo extends JFrame {
+public static class ExemploJLabel extends JFrame {
+    public ExemploJLabel() {
+        setTitle("Exemplo JLabel");
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel painel = new JPanel();
+
+        JLabel label1 = new JLabel("Ola, mundo!");
+        label1.setFont(new Font("Arial", Font.BOLD, 20));
+        label1.setForeground(Color.BLUE);
+
+        JLabel label2 = new JLabel("Este é um JLabel.");
+        label2.setHorizontalAlignment(JLabel.CENTER);
+
+        painel.add(label1);
+        painel.add(label2);
+
+        add(painel);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new ExemploJLabel(); // Cria a instância de ExemploJLabel
+    }
+}
+}
