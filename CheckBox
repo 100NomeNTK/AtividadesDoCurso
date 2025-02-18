@@ -1,0 +1,24 @@
+import javax.swing.*;
+
+public class CheckBox {
+    public static class ExemploJCheckBox extends JFrame {
+        public ExemploJCheckBox() {
+            setTitle("CheckBox");
+            setSize(400, 300);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            JPanel painel = new JPanel();
+            JCheckBox opcao1 = new JCheckBox("opção 1");
+            JCheckBox opcao2 = new JCheckBox("opção 2");
+
+            painel.add(opcao1);
+            painel.add(opcao2);
+
+            add(painel);
+            setVisible(true);
+        }
+    }
+    public static void main(String[] args) {
+        new ExemploJCheckBox();
+    }
+}
