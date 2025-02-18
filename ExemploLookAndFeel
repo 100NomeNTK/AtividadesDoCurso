@@ -1,0 +1,53 @@
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
+
+
+public class ExemploLookAndFeel {
+    public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel("java.swing.plaf.metal.MetalLookAndFeel");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            ex.printStackTrace();
+        }
+        //Cria a interface gráfica aqui(JFrame,jButton, etc.)
+
+    }
+}
+
+class MinhaJanela extends JFrame {
+    public MinhaJanela() {
+        setTitle("Minha primeira Janela");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+    public static void main(String[] args) {
+        new MinhaJanela();
+    }
+}
+
+class ExemploJPanel extends JFrame {
+    public ExemploJPanel() {
+        setTitle("Exemplo JPanel");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel painel = new JPanel();
+        painel.setBackground(Color.RED);
+
+        JPanel painel2 = new JPanel();
+        painel2.setBackground(Color.BLUE);
+
+        add(painel, BorderLayout.NORTH);
+        add(painel2, BorderLayout.CENTER);
+
+        setVisible(true);
+    }
+    public static void main(String[] args) {
+        new ExemploJPanel();
+    }
+}
