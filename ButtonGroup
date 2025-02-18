@@ -1,0 +1,29 @@
+import javax.swing.*;
+
+public class RadionButtom {
+    public static class ExemploJRadioButton extends JFrame {
+        public ExemploJRadioButton() {
+            setTitle("Radion Buttom");
+            setSize(500, 500);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            JPanel painel = new JPanel();
+
+            JRadioButton opcao = new JRadioButton("opcao 1");
+            JRadioButton opcao2 = new JRadioButton("opcao 2");
+
+            ButtonGroup group = new ButtonGroup();
+            group.add(opcao);
+            group.add(opcao2);
+
+            painel.add(opcao);
+            painel.add(opcao2);
+
+            add(painel);
+            setVisible(true);
+        }
+    }
+    public static void main(String[] args) {
+        new ExemploJRadioButton();
+    }
+}
