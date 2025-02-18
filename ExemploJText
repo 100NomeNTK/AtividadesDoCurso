@@ -1,0 +1,23 @@
+import javax.swing.*;
+
+public class ExemploJText {
+    public static class ExemploJTextField extends JFrame {
+        public ExemploJTextField() {
+            setTitle("Exemplo JTextField");
+            setSize(400, 300);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            JPanel painel = new JPanel();
+
+            JTextField campoTexto = new JTextField(20);
+            painel.add(new JLabel("Digite seu nome"));
+            painel.add(campoTexto);
+
+            add(painel);
+            setVisible(true);
+        }
+        public static void main(String[] args) {
+            new ExemploJTextField();
+        }
+    }
+}
