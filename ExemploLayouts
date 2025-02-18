@@ -1,0 +1,53 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class ExemploLayouts extends JFrame {
+        public ExemploLayouts() {
+
+            setTitle("ExemploLayouts");
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JPanel painelFlowLayout = new JPanel();
+            painelFlowLayout.setLayout(new FlowLayout());
+
+            JPanel painelBorderLayout = new JPanel();
+            painelBorderLayout.setLayout(new BorderLayout());
+            JPanel painelGridLayout = new JPanel();
+            painelGridLayout.setLayout(new GridLayout(2, 2));
+
+            for (int i = 0; i < 5; i++) {
+                painelFlowLayout.add(new JButton("Botão" + i));
+                painelBorderLayout.add(new JButton("Região" + i));
+                painelGridLayout.add(new JButton("Botão" + i));
+                painelGridLayout = new JPanel();
+                painelGridLayout.setLayout(new GridLayout(2, 2));
+
+            }
+            for (int i = 0; i < 5; i++) {
+                painelFlowLayout.add(new JButton("Botão " + i));
+                painelBorderLayout.add(new JButton("Região " + i));
+                painelGridLayout.add(new JButton("Botão " + i));
+            }
+
+                add(painelFlowLayout, BorderLayout.NORTH);
+                add(painelBorderLayout, BorderLayout.CENTER);
+                add(painelGridLayout, BorderLayout.SOUTH);
+
+            setVisible(true);
+        }
+
+            private String getBorderLayoutRegion(int i) {
+                switch (i) {
+                    case 1:
+                        return BorderLayout.NORTH;
+                    case 2:
+                        return BorderLayout.SOUTH;
+                    case 3:
+                        return BorderLayout.EAST;
+                    case 4:
+                        return BorderLayout.WEST;
+                    default:
+                        return BorderLayout.CENTER;
+                }
+            }
+        public static void main(String[] args) {new ExemploLayouts();}
+        }
