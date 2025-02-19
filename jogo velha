@@ -1,0 +1,114 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class JogoDaVelha extends JFrame {
+    private JButton[][] botoes;
+    private String vez = "X";
+    private boolean jogoEmAndamento = true;
+
+    public JogoDaVelha() {
+        // Configuração da janela principal
+        setTitle("Jogo da Velha");
+        setSize(300, 350);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        // Inicializando o tabuleiro 3x3
+        botoes = new JButton[3][3];
+        setLayout(new GridLayout(3, 3));
+
+        // Criando os botões e adicionando-os à janela
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                botoes[i][j] = new JButton("");
+                botoes[i][j].setFont(new Font("Arial", Font.PLAIN, 60));
+                botoes[i][j].setFocusPainted(false);
+                botoes[i][j].addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        jogada(e);
+                    }
+                });
+                add(botoes[i][j]);
+            }
+        }
+
+        setVisible(true);
+    }
+
+    private void jogada(ActionEvent e) {
+        if (!jogoEmAndamento) return;
+
+        JButton botaoClicado = (JButton) e.getSource();
+
+        // Não faz nada se o botão já foi clicado
+        if (!botaoClicado.getText().equals("")) return;
+
+        // Marcar a jogada (X ou O)
+        botaoClicado.setText(vez);
+
+        // Verifica se houve vitória
+        if (verificarVitoria()) {
+            JOptionPane.showMessageDialog(this, "Jogador " + vez + " venceu!");
+            jogoEmAndamento = false;
+        } else if (verificarEmpate()) {
+            JOptionPane.showMessageDialog(this, "Empate!");
+            jogoEmAndamento = false;
+        } else {
+            // Troca a vez do jogador
+            vez = vez.equals("X") ? "O" : "X";
+        }
+    }
+
+    private boolean verificarVitoria() {
+        // Verifica linhas, colunas e diagonais
+        for (int i = 0; i < 3; i++) {
+            if (botoes[i][0].getText().equals(vez) &&
+                botoes[i][1].getText().equals(vez) &&
+                botoes[i][2].getText().equals(vez)) {
+                return true;
+            }
+            if (botoes[0][i].getText().equals(vez) &&
+                botoes[1][i].getText().equals(vez) &&
+                botoes[2][i].getText().equals(vez)) {
+                return true;
+            }
+        }
+
+        if (botoes[0][0].getText().equals(vez) &&
+            botoes[1][1].getText().equals(vez) &&
+            botoes[2][2].getText().equals(vez)) {
+            return true;
+        }
+        if (botoes[0][2].getText().equals(vez) &&
+            botoes[1][1].getText().equals(vez) &&
+            botoes[2][0].getText().equals(vez)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean verificarEmpate() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (botoes[i][j].getText().equals("")) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        // Executando o jogo da velha
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new JogoDaVelha();
+            }
+        });
+    }
+}
