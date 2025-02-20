@@ -1,0 +1,242 @@
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+class test {
+    public static class GerenciadorDeContatos extends JFrame {
+
+        private JTextField nomeField, telefoneField, emailField;
+        private JButton adicionarButton, removerButton;
+        private JTable tabelaContatos;
+        private DefaultTableModel modeloTabela;
+        private List<Contato> contatos;
+
+        public GerenciadorDeContatos() {
+            contatos = new ArrayList<>();
+            setTitle("Gerenciador de Contatos");
+            setSize(600, 400);
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setLocationRelativeTo(null);
+
+            JPanel panel = new JPanel();
+            panel.setLayout(new GridLayout(5, 2));
+
+            JLabel nomeLabel = new JLabel("Nome:");
+            nomeField = new JTextField();
+            JLabel telefoneLabel = new JLabel("Telefone:");
+            telefoneField = new JTextField();
+            JLabel emailLabel = new JLabel("Email:");
+            emailField = new JTextField();
+
+            adicionarButton = new JButton("Adicionar");
+            removerButton = new JButton("Remover");
+
+            panel.add(nomeLabel);
+            panel.add(nomeField);
+            panel.add(telefoneLabel);
+            panel.add(telefoneField);
+            panel.add(emailLabel);
+            panel.add(emailField);
+            panel.add(adicionarButton);
+            panel.add(removerButton);
+
+            modeloTabela = new DefaultTableModel(new Object[]{"Nome", "Telefone", "Email"}, 0);
+            tabelaContatos = new JTable(modeloTabela);
+            JScrollPane scrollPane = new JScrollPane(tabelaContatos);
+
+            setLayout(new BorderLayout());
+            add(panel, BorderLayout.NORTH);
+            add(scrollPane, BorderLayout.CENTER);
+
+            adicionarButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    adicionarContato();
+                }
+            });
+
+            removerButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    removerContato();
+                }
+            });
+        }
+
+        private void adicionarContato() {
+            String nome = nomeField.getText().trim();
+            String telefone = telefoneField.getText().trim();
+            String email = emailField.getText().trim();
+
+
+            if (nome.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Nome não pode estar vazio.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (!telefone.matches("\\d+")) {
+                JOptionPane.showMessageDialog(this, "Telefone deve conter apenas números.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (!validarEmail(email)) {
+                JOptionPane.showMessageDialog(this, "Email inválido. Verifique se contém '@' e '.'", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Adiciona o contato à lista
+            Contato contato = new Contato(nome, telefone, email);
+            contatos.add(contato);
+            modeloTabela.addRow(new Object[]{nome, telefone, email});
+
+            // Limpa os campos
+            nomeField.setText("");
+            telefoneField.setText("");
+            emailField.setText("");
+        }
+
+        private void removerContato() {
+            int selectedRow = tabelaContatos.getSelectedRow();
+            if (selectedRow != -1) {
+                modeloTabela.removeRow(selectedRow);
+                contatos.remove(selectedRow);
+            } else {
+                JOptionPane.showMessageDialog(this, "Selecione um contato para remover.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        private boolean validarEmail(String email) {
+            // Expressão regular simples para validar email
+            Pattern pattern = Pattern.compile("^[\\w-\\.]+@[\\w-]+\\.[a-z]{2,3}$");
+            Matcher matcher = pattern.matcher(email);
+            return matcher.matches();
+        }
+
+        public static void main(String[] args) {
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    new GerenciadorDeContatos().setVisible(true);
+                }
+            });
+        }
+    }
+
+    static class Contato {
+        private String nome;
+        private String telefone;
+        private String email;
+
+        public Contato(String nome, String telefone, String email) {
+            this.nome = nome;
+            this.telefone = telefone;
+            this.email = email;
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public String getTelefone() {
+            return telefone;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+    }
+}
+
+class Test2 {
+
+
+    public static class GerenciadorDeContatosSimplificado extends JFrame {
+        private JTextField nomeField, telefoneField, emailField;
+        private JButton adicionarButton, removerButton;
+        private JTable tabelaContatos;
+        private DefaultTableModel modeloTabela;
+
+        public GerenciadorDeContatosSimplificado() {
+            setTitle("Gerenciador de Contatos");
+            setSize(600, 400);
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setLocationRelativeTo(null);
+
+            // Layout
+            JPanel panel = new JPanel(new GridLayout(4, 2));
+            nomeField = new JTextField();
+            telefoneField = new JTextField();
+            emailField = new JTextField();
+            adicionarButton = new JButton("Adicionar");
+            removerButton = new JButton("Remover");
+
+            panel.add(new JLabel("Nome:"));
+            panel.add(nomeField);
+            panel.add(new JLabel("Telefone:"));
+            panel.add(telefoneField);
+            panel.add(new JLabel("Email:"));
+            panel.add(emailField);
+            panel.add(adicionarButton);
+            panel.add(removerButton);
+
+            modeloTabela = new DefaultTableModel(new Object[]{"Nome", "Telefone", "Email"}, 0);
+            tabelaContatos = new JTable(modeloTabela);
+            JScrollPane scrollPane = new JScrollPane(tabelaContatos);
+
+            // Layout final
+            setLayout(new BorderLayout());
+            add(panel, BorderLayout.NORTH);
+            add(scrollPane, BorderLayout.CENTER);
+
+            // Eventos
+            adicionarButton.addActionListener(e -> adicionarContato());
+            removerButton.addActionListener(e -> removerContato());
+        }
+
+        private void adicionarContato() {
+            String nome = nomeField.getText().trim();
+            String telefone = telefoneField.getText().trim();
+            String email = emailField.getText().trim();
+
+            if (nome.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Nome não pode estar vazio.");
+                return;
+            }
+
+            if (!telefone.matches("\\d+")) {
+                JOptionPane.showMessageDialog(this, "Telefone deve conter apenas números.");
+                return;
+            }
+
+            if (!email.contains("@") || !email.contains(".")) {
+                JOptionPane.showMessageDialog(this, "Email inválido.");
+                return;
+            }
+
+            modeloTabela.addRow(new Object[]{nome, telefone, email});
+            nomeField.setText("");
+            telefoneField.setText("");
+            emailField.setText("");
+        }
+
+        private void removerContato() {
+            int selectedRow = tabelaContatos.getSelectedRow();
+            if (selectedRow != -1) {
+                modeloTabela.removeRow(selectedRow);
+            } else {
+                JOptionPane.showMessageDialog(this, "Selecione um contato para remover.");
+            }
+        }
+
+        public static void main(String[] args) {
+            SwingUtilities.invokeLater(() -> new GerenciadorDeContatosSimplificado().setVisible(true));
+        }
+    }
+
+}
